@@ -57,7 +57,7 @@
         var statusElement = document.querySelector('.status');
         if (statusElement) {
             var statusText = statusElement.textContent;
-            if (statusText.includes('is victorious') || statusText.includes('Draw')) {
+            if (statusText.includes('is victorious') || statusText.includes('Draw') || statusText.includes('Stalemate')) {
                 openAnalysisBoard();
                 setTimeout(requestComputerAnalysis, 2000); // Delay before clicking the button (adjust as needed)
             } else {
