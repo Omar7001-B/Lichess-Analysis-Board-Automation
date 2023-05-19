@@ -12,10 +12,16 @@
     'use strict';
 
     // Function to open the analysis board in a new tab
-  function openAnalysisBoard() {
-    document.querySelector("#main-wrap > main > div.round__app.variant-standard > div.rcontrols > div > a").click();
-}
-
+    function openAnalysisBoard() {
+        var analysisButtons = document.getElementsByClassName('fbt');
+        for (var i = 0; i < analysisButtons.length; i++) {
+            if (analysisButtons[i].textContent.includes('Analysis board')) {
+                var analysisUrl = analysisButtons[i].getAttribute('href');
+                window.open(analysisUrl, '_blank');
+                break;
+            }
+        }
+    }
 
     // Function to click on the "Request a computer analysis" button
     function requestComputerAnalysis() {
